@@ -28,17 +28,14 @@
           name="login"
           placeholder="password"
         />
-        <input
-          type="submit"
-          class="fadeIn fourth"
-          value="Log In"
-          onclick="connect"
-        />
+        <input type="submit" class="fadeIn fourth" value="Log In" />
       </form>
 
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover">Forgot Password?</a>
+        <a class="underlineHover" [routerLink]="['/admin/dashboard']"
+          >Forgot Password?</a
+        >
       </div>
     </div>
   </div>

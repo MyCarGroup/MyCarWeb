@@ -103,7 +103,7 @@ export class AdminLayoutComponent implements OnInit {
         .removeClass("active");
       $(this).addClass("active");
 
-      var new_color = $(this).data("color");
+      var new_color = "azure";
 
       if ($sidebar.length !== 0) {
         $sidebar.attr("data-color", new_color);
@@ -156,6 +156,11 @@ export class AdminLayoutComponent implements OnInit {
   }
   ngAfterViewInit() {
     this.runOnRouteChange();
+    var new_color = "azure";
+    let $sidebar = $(".sidebar");
+    if ($sidebar.length !== 0) {
+      $sidebar.attr("data-color", new_color);
+    }
   }
   isMaps(path) {
     var titlee = this.location.prepareExternalUrl(this.location.path());

@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from '@angular/router';
-
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-test",
@@ -12,6 +11,6 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {}
   connect() {
-    this.router.navigateByUrl("master");
+    this.router.navigateByUrl("/admin/dashboard");
   }
 }
