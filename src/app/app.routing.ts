@@ -1,34 +1,44 @@
-import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { BrowserModule } from "@angular/platform-browser";
+import { Routes, RouterModule } from "@angular/router";
 
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
+import { TestComponent } from "./layouts/test/test.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
-const routes: Routes =[
+const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  }, {
-    path: '',
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full"
+  },
+  {
+    path: "",
     component: AdminLayoutComponent,
-    children: [{
-      path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-    }]
-  }
+    children: [
+      {
+        path: "admin",
+        loadChildren:
+          "./layouts/admin-layout/admin-layout.module#AdminLayoutModule"
+      }
+    ]
+  },
+  {
+    path: "login",
+    component: TestComponent
+  },
+  { path: "**", component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{
-       useHash: true
+    RouterModule.forRoot(routes, {
+      useHash: true
     })
   ],
-  exports: [
-  ],
+  exports: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
