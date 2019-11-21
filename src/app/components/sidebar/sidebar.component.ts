@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-
+import { RouterModule } from "@angular/router";
 declare const $: any;
 declare interface RouteInfo {
   path: string;
@@ -15,7 +15,7 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/admin/user-profile",
+    path: "/admin/add-candidate",
     title: "Add candidate",
     icon: "person",
     class: ""

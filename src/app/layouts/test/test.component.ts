@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
 
 @Component({
   selector: "app-test",
@@ -7,10 +6,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./test.component.scss"]
 })
 export class TestComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit() {}
-  connect() {
-    this.router.navigateByUrl("/admin/dashboard");
-  }
 }

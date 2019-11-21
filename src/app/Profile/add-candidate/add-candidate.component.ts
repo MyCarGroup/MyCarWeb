@@ -39,11 +39,11 @@ export const Citys: CityInfo[] = [
   { value: "24", title: "Le Kef" }
 ];
 @Component({
-  selector: "app-user-profile",
-  templateUrl: "./user-profile.component.html",
-  styleUrls: ["./user-profile.component.css"]
+  selector: "add-candidate",
+  templateUrl: "./add-candidate.component.html",
+  styleUrls: ["./add-candidate.component.css"]
 })
-export class UserProfileComponent implements OnInit {
+export class AddCandidateComponent implements OnInit {
   control: FormGroup;
   firstname: AbstractControl;
   citys: any[];
