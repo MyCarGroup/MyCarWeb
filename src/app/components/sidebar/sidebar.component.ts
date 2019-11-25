@@ -15,13 +15,19 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/admin/add-candidate",
-    title: "Add candidate",
+    path: "/admin/admin-profile",
+    title: "Profile",
     icon: "person",
     class: ""
   },
   {
-    path: "/admin/table-list",
+    path: "/admin/add-candidate",
+    title: "Add candidate",
+    icon: "person_add",
+    class: ""
+  },
+  {
+    path: "/admin/candidate-list",
     title: "list Condidate",
     icon: "content_paste",
     class: ""

@@ -34,7 +34,11 @@
     </form>
     <ul class="nav navbar-nav nav-mobile-menu">
       <li class="nav-item">
-        <a class="nav-link">
+        <a
+          class="nav-link"
+          [routerLink]="['/admin/dashboard']"
+          routerLinkActive="active"
+        >
           <i class="material-icons">dashboard</i>
           <p>
             <span class="d-lg-none d-md-block">Stats</span>

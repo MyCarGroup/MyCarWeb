@@ -10,8 +10,7 @@ import { ComponentsModule } from "./components/components.module";
 import { AppComponent } from "./app.component";
 
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { AddCandidateComponent } from "./Profile/Add-candidate/add-candidate.component";
-import { TableListComponent } from "./table-list/table-list.component";
+import { AddCandidateComponent } from "./layouts/admin-layout/add-candidate/add-candidate.component";
 import { TypographyComponent } from "./typography/typography.component";
 import { IconsComponent } from "./icons/icons.component";
 import { MapsComponent } from "./maps/maps.component";
@@ -19,9 +18,9 @@ import { NotificationsComponent } from "./notifications/notifications.component"
 import { UpgradeComponent } from "./upgrade/upgrade.component";
 import { AgmCoreModule } from "@agm/core";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
-import { TestComponent } from "./layouts/test/test.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { UserProfileComponent } from "./Profile/user-profile/user-profile.component";
+import { AdminProfileComponent } from "./layouts/admin-layout/admin-profile/admin-profile.component";
+import { LoginComponent } from "./layouts/login/login.component";
 
 @NgModule({
   imports: [
@@ -39,9 +38,8 @@ import { UserProfileComponent } from "./Profile/user-profile/user-profile.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    TestComponent,
     PageNotFoundComponent,
-    UserProfileComponent
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

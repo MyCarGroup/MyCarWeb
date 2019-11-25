@@ -4,8 +4,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
 
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
-import { TestComponent } from "./layouts/test/test.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { LoginComponent } from "./layouts/login/login.component";
 
 const routes: Routes = [
   {
@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: "login",
-    component: TestComponent
+    component: LoginComponent
   },
   { path: "**", component: PageNotFoundComponent }
 ];
