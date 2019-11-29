@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>achref {{ datalist.idCandidate }}</h1>
+<div mat-dialog-content>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button
+      *ngFor="let permisType of permisTypes"
+      value="{{ permisType.id }}"
+      class="mr-5 ml-5"
+      (change)="getSelectedPermisType(permisType.id)"
+      >{{ permisType.label }} </mat-radio-button
+    ><br />
+  </mat-radio-group>
+</div>
+
+<div mat-dialog-actions class="float-md-right">
+  <span>
+    <button mat-button mat-dialog-close>Exit</button>
+    <button mat-raised-button (click)="save()">
+      Save
+    </button>
+  </span>
+</div>

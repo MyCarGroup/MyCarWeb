@@ -11,6 +11,9 @@ import { MapsComponent } from "../../maps/maps.component";
 import { NotificationsComponent } from "../../notifications/notifications.component";
 import { UpgradeComponent } from "../../upgrade/upgrade.component";
 import { AdminProfileComponent } from "./admin-profile/admin-profile.component";
+import { HttpClientModule } from "@angular/common/http";
+import { MatDialogModule } from "@angular/material";
+
 import {
   MatButtonModule,
   MatInputModule,
@@ -29,7 +32,9 @@ import { CandidateListComponent } from "./candidate-list/candidate-list.componen
     MatButtonModule,
     MatRippleModule,
     MatFormFieldModule,
+    MatDialogModule,
     MatInputModule,
+    HttpClientModule,
     MatSelectModule,
     MatTooltipModule
   ],

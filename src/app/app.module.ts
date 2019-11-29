@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
-
+import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app.routing";
 import { ComponentsModule } from "./components/components.module";
 
@@ -21,27 +21,51 @@ import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.compon
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { AdminProfileComponent } from "./layouts/admin-layout/admin-profile/admin-profile.component";
 import { LoginComponent } from "./layouts/login/login.component";
-
+import {
+  MatDialogModule,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from "@angular/material/dialog";
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatRippleModule,
+  MatFormFieldModule,
+  MatTooltipModule,
+  MatSelectModule
+} from "@angular/material";
+import { AddPermisTypeModalComponent } from "./layouts/admin-layout/candidate-list/add-permis-type-modal/add-permis-type-modal.component";
+import { MatRadioModule } from "@angular/material/radio";
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     FormsModule,
+    MatDialogModule,
+    MatRadioModule,
     ReactiveFormsModule,
     HttpModule,
+    MatButtonModule,
+    HttpClientModule,
     ComponentsModule,
+    MatSelectModule,
     RouterModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: "YOUR_GOOGLE_MAPS_API_KEY"
     })
   ],
+  entryComponents: [AddPermisTypeModalComponent],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    AddPermisTypeModalComponent
   ],
-  providers: [],
+  providers: [
+    { provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [] }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
