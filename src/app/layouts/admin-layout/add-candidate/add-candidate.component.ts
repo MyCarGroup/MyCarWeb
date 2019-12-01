@@ -10,37 +10,6 @@ import {
 } from "@angular/forms";
 declare const $: any;
 
-declare interface CityInfo {
-  value: string;
-  title: string;
-}
-
-export const Citys: CityInfo[] = [
-  { value: "1", title: "Ariana" },
-  { value: "2", title: "Béja" },
-  { value: "3", title: "Ben Arous" },
-  { value: "4", title: "Bizerte" },
-  { value: "5", title: "Gabes" },
-  { value: "6", title: "Gafsa" },
-  { value: "7", title: "Jendouba" },
-  { value: "8", title: "Kairouan" },
-  { value: "9", title: "Kasserine" },
-  { value: "10", title: "Kebili" },
-  { value: "11", title: "La Manouba" },
-  { value: "12", title: "Mahdia" },
-  { value: "13", title: "Médenine" },
-  { value: "14", title: "Monastir" },
-  { value: "15", title: "Nabeul" },
-  { value: "16", title: "Sfax" },
-  { value: "17", title: "Sidi Bouzid " },
-  { value: "18", title: "Siliana" },
-  { value: "19", title: "Sousse" },
-  { value: "20", title: "Tataouine" },
-  { value: "21", title: "Tozeur" },
-  { value: "22", title: "Tunis" },
-  { value: "23", title: "Zaghouan" },
-  { value: "24", title: "Le Kef" }
-];
 @Component({
   selector: "add-candidate",
   templateUrl: "./add-candidate.component.html",
@@ -50,7 +19,6 @@ export class AddCandidateComponent implements OnInit {
   form: FormGroup;
   hide: true;
   candidate: any;
-  firstname: AbstractControl;
   citys: any[];
   constructor(private permis: PermisService, private fb: FormBuilder) {
     this.form = new FormGroup({
@@ -76,12 +44,9 @@ export class AddCandidateComponent implements OnInit {
     };
 
     this.permis.createCandidate(this.candidate);
+    this.form.reset();
   }
   showNotification(from, align) {
-    const type = ["", "info", "success", "warning", "danger"];
-
-    const color = Math.floor(Math.random() * 4 + 1);
-
     $.notify(
       {
         icon: "notifications",
@@ -91,7 +56,7 @@ export class AddCandidateComponent implements OnInit {
           "</b> </strong> - Is added successfully"
       },
       {
-        type: type[color],
+        type: "info",
         timer: 100,
         placement: {
           from: from,
