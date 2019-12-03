@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>achref</h1>
+<div mat-dialog-content>
+  <table style="width: 100%;">
+    <tr>
+      <td>
+        Date : <br />
+        <ngb-datepicker
+          #dp
+          [(ngModel)]="model"
+          (navigate)="date = $event.next"
+        ></ngb-datepicker>
+      </td>
+      <td>
+        Start Time : <ngb-timepicker [(ngModel)]="startTime"></ngb-timepicker>
+      </td>
+      <td>
+        End Time :
+        <ngb-timepicker [(ngModel)]="endTime"></ngb-timepicker>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div mat-dialog-actions class="float-md-right">
+  <span>
+    <button mat-button mat-dialog-close>Exit</button>
+    <button mat-raised-button (click)="save()">
+      Save
+    </button>
+  </span>
+</div>

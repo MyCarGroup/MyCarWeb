@@ -36,8 +36,27 @@ import {
 } from "@angular/material";
 import { AddPermisTypeModalComponent } from "./layouts/admin-layout/candidate-list/add-permis-type-modal/add-permis-type-modal.component";
 import { MatRadioModule } from "@angular/material/radio";
+import { AddSessionToCandidateComponent } from "./layouts/admin-layout/candidate-list/add-session-to-candidate/add-session-to-candidate.component";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import {
+  NgbPaginationModule,
+  NgbAlertModule
+} from "@ng-bootstrap/ng-bootstrap";
+import { SessionCalendarComponent } from "./layouts/admin-layout/session-calendar/session-calendar.component";
+import { CalendarModule, DateAdapter } from "angular-calendar";
+import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
+import { CommonModule } from "@angular/common";
+import { DemoUtilsModule } from "./layouts/admin-layout/session-calendar/demo-utils/module";
+
 @NgModule({
   imports: [
+    CommonModule,
+    HttpClientModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    DemoUtilsModule,
     BrowserAnimationsModule,
     FormsModule,
     MatDialogModule,
@@ -45,27 +64,38 @@ import { MatRadioModule } from "@angular/material/radio";
     ReactiveFormsModule,
     HttpModule,
     MatButtonModule,
+    NgbPaginationModule,
+    NgbAlertModule,
     HttpClientModule,
     ComponentsModule,
     MatSelectModule,
     RouterModule,
+    NgbModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: "YOUR_GOOGLE_MAPS_API_KEY"
-    })
+    }),
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
-  entryComponents: [AddPermisTypeModalComponent],
+  entryComponents: [
+    AddPermisTypeModalComponent,
+    AddSessionToCandidateComponent
+  ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     PageNotFoundComponent,
     LoginComponent,
-    AddPermisTypeModalComponent
+    AddPermisTypeModalComponent,
+    AddSessionToCandidateComponent,
+    SessionCalendarComponent
   ],
   providers: [
+    SessionCalendarComponent,
     { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [] }
   ],
+  exports: [SessionCalendarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

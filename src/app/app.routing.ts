@@ -6,6 +6,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { LoginComponent } from "./layouts/login/login.component";
+import { SessionCalendarComponent } from "./layouts/admin-layout/session-calendar/session-calendar.component";
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
     path: "login",
     component: LoginComponent
   },
+  { path: "calendar", component: SessionCalendarComponent },
   { path: "**", component: PageNotFoundComponent }
 ];
 

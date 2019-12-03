@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { PermisService } from "../../../services/permis.service";
 
 import { AddPermisTypeModalComponent } from "./add-permis-type-modal/add-permis-type-modal.component";
+import { AddSessionToCandidateComponent } from "./add-session-to-candidate/add-session-to-candidate.component";
 import {
   MatDialog,
   MatDialogRef,
@@ -28,6 +29,22 @@ export class CandidateListComponent implements OnInit {
       },
       height: "300px",
       width: "600px"
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("The dialog was closed");
+      if (result) {
+        console.log(result);
+      }
+    });
+  }
+  openAddSessionDialog(idCandidate): void {
+    let dialogRef = this.dialog.open(AddSessionToCandidateComponent, {
+      data: {
+        idCandidate: idCandidate
+      },
+      height: "70%",
+      width: "50%"
     });
 
     dialogRef.afterClosed().subscribe(result => {

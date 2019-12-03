@@ -47,6 +47,15 @@
                     </td>
                     <td>
                       <span class="pull-right">
+                        <a
+                          class="options"
+                          (click)="openAddSessionDialog(candidate.id)"
+                        >
+                          <i class="material-icons">
+                            alarm_add
+                          </i>
+                        </a>
+                        &nbsp;&nbsp;
                         <a class="options">
                           <i class="material-icons">
                             create
